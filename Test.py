@@ -43,6 +43,8 @@ with open('test_dwh.csv') as csv_file:
         value = (row[0])
         all_value.append(value)
         mycursor = cnx.cursor ()
+        sql_query = "INSERT INTO 'data_pos.pos'('STORE', 'ID_BILL', 'CREATE_BY', 'DATE_CREATE', 'STATUS', 'CANCEL_NOT', 'SEQ', 'EI_TA', 'ITEM_QTY', 'STATUS_item', 'DISCOUNT', 'CANCEL', 'ROW_NUMBER') VALUES (%%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s)"
+
         mycursor.executemany(sql_query,all_value)
 
 print(csv_data)
