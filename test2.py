@@ -23,7 +23,7 @@ with open('test_dwh.csv', 'r') as f:
     conn = create_engine('mysql://root:@127.0.0.1/data_pos').raw_connection()
     cursor = conn.cursor()
     cmd = 'COPY pos(STORE, ID_BILL, CREATE_BY, DATE_CREATE, STATUS, CANCEL_NOT, SEQ, EI_TA, ITEM_QTY, STATUS_item, DISCOUNT, CANCEL, ROW_NUMBER) FROM STDIN WITH (FORMAT CSV, HEADER FALSE)'
-    cursor.copy_expert(cmd, f)
+    cursor.executemany(cmd, f)
     conn.commit()
 
 print('sukses')
