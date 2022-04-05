@@ -1,4 +1,3 @@
-import mysql.connector
 from datetime import date, datetime, timedelta
 import pandas
 import pandas as pd
