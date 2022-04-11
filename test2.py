@@ -27,5 +27,7 @@ with open('test_dwh.csv', 'r') as f:
     cmd = 'COPY pos(STORE, ID_BILL, CREATE_BY, DATE_CREATE, STATUS, CANCEL_NOT, SEQ, EI_TA, ITEM_QTY, STATUS_item, DISCOUNT, CANCEL, ROW_NUMBER) FROM STDIN WITH (FORMAT CSV, HEADER FALSE)'
     cursor.executemany(cmd, f)
     conn.commit()
+    sql_query = "INSERT INTO 'data_pos.pos'('STORE', 'ID_BILL', 'CREATE_BY', 'DATE_CREATE', 'STATUS', 'CANCEL_NOTE', 'SEQ', 'EI_TA', 'ITEM_QTY', 'STATUS_item', 'DISCOUNT', 'CANCEL', 'ROW_NUMBER') VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+
 
 print('sukses')
