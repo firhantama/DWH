@@ -6,7 +6,7 @@ mydb =MySQLdb.connect(user='root', passwd='',
                               database='data_pos')
 cursor = mydb.cursor()
 
-csv_data = csv.reader(file('test_dwh.csv'))
+csv_data = csv.reader('test_dwh.csv')
 for row in csv_data:
 
     cursor.execute('INSERT INTO data_pos.pos(STORE, ID_BILL, CREATE_BY, DATE_CREATE, STATUS, CANCEL_NOT, SEQ, EI_TA, ITEM_QTY, STATUS_item, DISCOUNT, CANCEL, ROW_NUMBER)' \
