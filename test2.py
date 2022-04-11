@@ -1,9 +1,11 @@
 from datetime import date, datetime, timedelta
+from importlib.metadata import metadata
 import pandas
 import pandas as pd
 from pandas.io import sql
 import csv
 import MySQLdb
+import mysql.connector 
 
 import pandas as pd
 from pandas.io import sql
@@ -14,11 +16,13 @@ print(df)
 
 engine = create_engine('mysql://root:@127.0.0.1/data_pos').raw_connection()
 engine.connect()
-cursor = engine.cursor()
-print (engine.connect())
-with engine.connect() as conn, conn.begin():
-    df.to_sql('data_pos.pos', conn, if_exists='replace')
-    engine.commit()
+metadata =db.Metadata()
+# cursor = engine.cursor()
+# print (engine.connect())
+data_pos.pos = pos.Table('data_pos', metadata, autoload=True, autoload_widht=engine)
+# with engine.connect() as conn, conn.begin():
+#     df.to_sql('data_pos.pos', conn, if_exists='replace')
+#     engine.commit()
 
 
 with open('test_dwh.csv', 'r') as f:    
