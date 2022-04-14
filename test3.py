@@ -1,6 +1,8 @@
 import csv
 import MySQLdb
 import pandas as pd
+import time 
+from datetime import datatime
 
 mydb =MySQLdb.connect(user='admin', passwd='y$UYRPB&7Go5',
                               host='database-1.cfdamesx7fal.ap-southeast-1.rds.amazonaws.com',
@@ -16,6 +18,8 @@ with open('test_dwh.csv', 'r') as file:
     print (csv_data)
     for row in csv_data:
         print (row)
+
+    x
 
         # cursor.execute('INSERT INTO dwh_project.dwh_project2(STORE, ID_BILL, CREATE_BY, DATE_CREATE, STATUS, CANCEL_NOT, SEQ, EI_TA, ITEM_QTY, STATUS_item, DISCOUNT, CANCEL, ROW_NUMBER)' \
         #       'VALUES(%s, %s, %s ,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', 
