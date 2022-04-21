@@ -1,12 +1,15 @@
 import pandas as pd
 from sqlalchemy import create_engine, types
 
+df = pd.read_csv('test_dwh.csv')
+print(df)
+
 def import_to_mysql(filename, table_name, db_user, db_pass, address, db_name):
     connection_address = 'mysql://{}:{}@{}/{}'.format(db_user, db_pass, address, db_name)
     print(connection_address)
     engine = create_engine(connection_address) # enter your password and database names here
     print(engine)
-    df = pd.read_csv(filename,sep=';',encoding='utf8')
+    df = pd.read_csv(filename,sep=';',encoding='utf8',)
     print(df) # Replace Excel_file_name with your excel sheet name
     df.to_sql(table_name, con=engine, index=False, if_exists='append', chunksize=1000,)
     print('done to server')
