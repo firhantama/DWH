@@ -17,3 +17,7 @@ build/execute_insert_mysql/warn-execute_insert_mysql.txt
 build/execute_insert_mysql/xref-execute_insert_mysql.html
 build/execute_insert_mysql/base_library.zip
 test_dwh.csv
+dwh_log.log
+configuration.csv
+test_linux_file.py
+dwh_log.log

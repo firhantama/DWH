@@ -15,7 +15,8 @@ def import_to_mysql(filename, table_name, db_user, db_pass, address, db_name):
     print(connection_address)
     engine = create_engine(connection_address) # enter your password and database names here
     print(engine)
-    df = pd.read_csv(filename,sep=',',encoding='utf8',)
+    df = pd.read_csv(filename,sep=',',encoding='utf8')
+    df['QUANTITY_SUM;'] = df['QUANTITY_SUM'] 
     print(df) # Replace Excel_file_name with your excel sheet name
     df.to_sql(table_name, con=engine, index=False, if_exists='append', chunksize=1000,)
     print('done to server')

@@ -1,2 +1,2 @@
 file_path,table_name,db_user,db_pass,address,db_name,folder_path
-test_dwh.csv,data_sales,admin,y$UYRPB&7Go5,database-1.cfdamesx7fal.ap-southeast-1.rds.amazonaws.com,tuku_pos,C:\\Users\\AZKA\\Documents\\koding2an_baru\\DWH\\DWH\\folder_ftp
+etl_an_product.csv,product_amount_qty_sum,admin,y$UYRPB&7Go5,database-1.cfdamesx7fal.ap-southeast-1.rds.amazonaws.com,BI_material,C:\\Users\\AZKA\\Documents\\koding2an_baru\\DWH\\DWH\\folder_ftp
